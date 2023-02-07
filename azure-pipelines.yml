@@ -22,3 +22,8 @@ steps:
     gradleOptions: '-Xmx3072m'
     publishJUnitResults: false
     tasks: 'assembleDebug'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: './app/build/outputs/apk/debug/app-debug.apk' # string. Required. Path to publish. Default: $(Build.ArtifactStagingDirectory).
+    ArtifactName: 'app' # string. Required. Artifact name. Default: drop.
+    publishLocation: 'Container' # 'Container' | 'File
